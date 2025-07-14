@@ -5,15 +5,14 @@ from email.mime.multipart import MIMEMultipart
 import os
 
 app = Flask(__name__)
-app.secret_key = 'c21510ecb690c70c779879f44df8c6a035074521d6e519a00e3993c1eef31e45b'
 
-SMTP_SERVER = 'smtp.gmail.com'
-SMTP_PORT = 587
-SMTP_USERNAME = 'harnishdpatel@gmail.com'
-SMTP_PASSWORD = 'ucxe qpew puar abem'
-EMAIL_SENDER = 'harnishdpatel@gmail.com'
-EMAIL_RECIPIENT = '23dce080@charusat.edu.in'
-MAIL_HISTORY_FILE = 'mail_history.txt'
+SECRET_KEY = os.environ.get('SECRET_KEY')
+SMTP_SERVER = os.environ.get('SMTP_SERVER')
+SMTP_PORT = int(os.environ.get('SMTP_PORT'))
+SMTP_USERNAME = os.environ.get('SMTP_USERNAME')
+SMTP_PASSWORD = os.environ.get('SMTP_PASSWORD')
+EMAIL_SENDER = os.environ.get('EMAIL_SENDER')
+EMAIL_RECIPIENT = os.environ.get('EMAIL_RECIPIENT')
 
 @app.route('/')
 def index():
