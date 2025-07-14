@@ -5,6 +5,8 @@ from email.mime.multipart import MIMEMultipart
 import os
 
 app = Flask(__name__)
+app.secret_key = SECRET_KEY
+
 
 SECRET_KEY = os.environ.get('SECRET_KEY')
 SMTP_SERVER = os.environ.get('SMTP_SERVER')
